@@ -33,3 +33,13 @@
     transform: rotate(360deg);
   }
 }
+.entry-text{
+  font-size: 22px;
+}
+.entry-meta{
+  font-size: 18px;
+}
+.entry-meta i{
+  font-size: 22px;
+  color: #42855A;
+}

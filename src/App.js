@@ -1,28 +1,8 @@
 import './App.css';
 import {Route, BrowserRouter, NavLink} from "react-router-dom";
-
-function Menu(){
-    return (
-        <nav className="nav">
-            <NavLink className="nav-link active" aria-current="page" to="/">Главная</NavLink>
-            <NavLink className="nav-link" to="/about">О нас</NavLink>
-            <NavLink className="nav-link" to="/contact-us">Контакты</NavLink>
-        </nav>
-    );
-}
-
-function MainPage(){
-    return (
-        <div className="container">
-            <div className="col-md-8 mx-auto">
-                <h1 className="text-center mb-4">Главная страница</h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id dolor lorem. Integer sollicitudin placerat justo, et tempus urna sagittis posuere. Curabitur pulvinar, dui sed porta luctus, nulla urna efficitur elit, sit amet molestie magna lacus vitae neque. Ut non dui non augue euismod vulputate. Nam in dignissim nunc. Curabitur id nulla lobortis lacus convallis faucibus. Mauris est massa, interdum et venenatis in, efficitur at arcu. Sed auctor est sed elit rhoncus, cursus scelerisque diam mollis. Proin odio mauris, malesuada eget nisl nec, auctor interdum velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed eget leo sit amet nibh accumsan accumsan. Vestibulum porttitor tortor non massa pulvinar iaculis. Pellentesque quis egestas felis, eu convallis lorem.
-                </p>
-            </div>
-        </div>
-    );
-}
+import {Menu} from './components/Menu';
+import {PostList} from "./components/PostList";
+import {Post} from './components/Post'
 
 function About(){
     return (
@@ -52,12 +32,13 @@ function ContactUs(){
 
 function App() {
   return (
-    <div className="App">
+    <div className="container">
         <BrowserRouter>
             <Menu />
-            <Route exact path="/" render={() => <MainPage />}/>
+            <Route exact path="/" render={() => <PostList />}/>
             <Route path="/about" render={() => <About />}/>
             <Route path="/contact-us" render={() => <ContactUs />}/>
+            <Route path="/post" render={() => <Post />} />
         </BrowserRouter>
     </div>
   );
