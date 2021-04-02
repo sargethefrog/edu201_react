@@ -3,6 +3,8 @@ import {Route, BrowserRouter, NavLink} from "react-router-dom";
 import {Menu} from './components/Menu';
 import {PostList} from "./components/PostList";
 import {Post} from './components/Post'
+import {AddPost} from './components/AddPost';
+import {Reg} from './components/Reg';
 
 function About(){
     return (
@@ -36,9 +38,9 @@ function App() {
         <BrowserRouter>
             <Menu />
             <Route exact path="/" render={() => <PostList />}/>
-            <Route path="/about" render={() => <About />}/>
-            <Route path="/contact-us" render={() => <ContactUs />}/>
+            <Route path="/addPost" render={() => <AddPost />} />
             <Route path="/post" render={() => <Post />} />
+            <Route path="/reg" render={() => <Reg />} />
         </BrowserRouter>
     </div>
   );
